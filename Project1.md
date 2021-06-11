@@ -318,3 +318,4 @@ As a **Bonus**, provide the specific commands the user will need to run to downl
 | sudo  docker container start <container name>  | to start  the container                                      |
 | sudo  docker ps                                | to  validate if container is running. The uptime will be indicated under STATUS  column |
 | sudo  docker container attach <container name> | to  log in to the container                                  |
+
