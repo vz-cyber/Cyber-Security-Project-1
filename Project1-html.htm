@@ -1,0 +1,1546 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+code
+	{font-family:"Courier New";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:.5in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif'>Automated
+ELK Stack Deployment</span></b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>The files
+in this repository were used to configure the network depicted below.</span></p>
+
+<p class=MsoListParagraph style='text-indent:-.25in'><span style='font-family:
+Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='font-family:"Times New Roman",serif'>TODO: Update the path with the name
+of your diagram: </span><a
+href="https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/images/Project1-Network-Diagram.png">https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/images/Project1-Network-Diagram.png</a></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a
+href="../Project-1-upload/images/Project1-Network-Diagram.png"><span
+style='font-family:"Times New Roman",serif;color:windowtext;text-decoration:
+none'><img border=0 width=543 height=423 id="Picture 9"
+src="Project1-html_files/image001.png"></span></a></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'> This
+document contains the following details:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif'>Description of
+the Topology</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif'>Access Policies</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif'>ELK
+Configuration</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif'>Beats in Use</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif'>Machines Being
+Monitored</span></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif'>How to Use the
+Ansible Build</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>These
+files have been tested and used to generate a live ELK deployment on Azure.
+They can be used to either recreate the entire deployment pictured above.
+Alternatively, select portions of the <span style='color:#0070C0'>yml</span>
+file may be used to install only certain pieces of it, such as Filebeat.</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman",serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman",serif'>Jump Box Ansible file configuration
+details:</span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>The ansible
+container should be started the on the Jump box in order to access
+configuration file.  </span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>Configuration
+files are located under <b>/etc/ansible</b> folder: </span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;line-height:normal'>./hosts</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;line-height:normal'>./ansible.cfg</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;line-height:normal'>./elk.yml</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;line-height:normal'>./<a name="_Hlk74178894">pentest.yml</a></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;line-height:normal'>./roles (folder)</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;line-height:normal'>./roles/filebeat-playbook.yml</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;line-height:normal'>./roles/metricbeat-playbook.yml</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;line-height:normal'>./files (folder)</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;line-height:normal'>./files/metricbeat-config.yml</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:1.0in;line-height:normal'>./files/filebeat-config.yml</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;line-height:normal'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>File Details:</span></b></p>
+
+<p class=MsoListParagraph style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif;color:#0070C0'>Ansible
+<b>hosts</b> file</span><span style='font-family:"Times New Roman",serif'>: <a
+href="https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/hosts">https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/hosts</a></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Times New Roman",serif'>The
+following [webservers] and [elk] sections were added to the ansible <b>hosts</b>
+file:</span></p>
+
+<p class=MsoNormal style='margin-left:1.0in'><b><span style='font-family:"Times New Roman",serif'>[webservers]</span></b></p>
+
+<p class=MsoNormal style='margin-left:1.0in'><b><span style='font-family:"Times New Roman",serif'>[elk]</span></b></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Times New Roman",serif'>Each
+section includes web and elk server IP addresses, listed under relevant
+section:</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><img border=0 width=568 height=193
+id="Picture 1" src="Project1-html_files/image002.png"></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Times New Roman",serif'>Adding
+“ansible_python_interpreter=/usr/bin/python3” section next to IP address is
+required for Ubuntu 18.04 (Web). That option is not required VM running Ubuntu
+20.4 (Elk).</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:.25in;text-indent:-.25in'><span
+class=MsoHyperlink><span style='font-family:Symbol;color:windowtext;text-decoration:
+none'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style='font-family:"Times New Roman",serif;
+color:#0070C0'>Ansible.cfg file</span><span style='font-family:"Times New Roman",serif'>:<span
+class=MsoHyperlink> <a
+href="https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/ansible.cfg">https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/ansible.cfg</a></span></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.25in'><span
+style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.25in'><span
+style='font-family:"Times New Roman",serif'>In the ansible configuration file
+the <b>remote_user </b>line was uncommented, and <b>root</b> account was
+replaced with <b>sysadmin</b> as listed below:</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span style='font-family:"Times New Roman",serif'><img
+border=0 width=528 height=66 id="Picture 3"
+src="Project1-html_files/image003.png"></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.25in'><span
+style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif;color:#0070C0'>Ansible
+<b>pentest.yml</b> playbook file: <a
+href="https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/pentest.yml">https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/pentest.yml</a></span></p>
+
+<p class=MsoListParagraphCxSpLast><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman",serif'>Elk Stack playbook and configuration
+files:</span></b></p>
+
+<p class=MsoListParagraph style='margin-left:.25in;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif;color:#0070C0'>Ansible
+<b>elk.yml </b>playbook file</span><span style='font-family:"Times New Roman",serif'>:
+<a
+href="https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/elk.yml">https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/elk.yml</a></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Times New Roman",serif'>View
+the file for additional details.</span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>Filebeat
+Service playbook and configuration files:</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:.75in;text-indent:-.25in'><span
+style='font-family:"Courier New";color:#0070C0'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><b><span style='font-family:"Times New Roman",serif'>filebeat-config.yml
+</span></b><span style='font-family:"Times New Roman",serif;color:#0070C0'>Filebeat
+Configuration file: <a
+href="https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/files/filebeat-config.yml">https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/files/filebeat-config.yml</a></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.75in;text-indent:-.25in'><span
+style='font-family:"Courier New";color:#0070C0'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><b><span style='font-family:"Times New Roman",serif'>filebeat-playbook.yml</span></b><span
+style='font-family:"Times New Roman",serif'> <span style='color:#0070C0'>Filebeat
+Playbook file:  <a
+href="https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/roles/filebeat-playbook.yml">https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/roles/filebeat-playbook.yml</a></span></span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:.75in'><span
+style='font-family:"Times New Roman",serif;color:#0070C0'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-family:"Times New Roman",serif'>Metricbeat
+Service playbook and configuration files:</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:.75in;text-indent:-.25in'><span
+style='font-family:"Courier New";color:#0070C0'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><b><span style='font-family:"Times New Roman",serif'>metricbeat-config.yml
+</span></b><span style='font-family:"Times New Roman",serif;color:#0070C0'>Metricbeat
+Configuration file: https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/files/metricbeat-config.yml</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.75in;text-indent:-.25in'><span
+style='font-family:"Courier New";color:#0070C0'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><b><span style='font-family:"Times New Roman",serif'>metrickbeat-playbook.yml</span></b><span
+style='font-family:"Times New Roman",serif'> <span style='color:#0070C0'>Metricbeat
+Playbook file: <a
+href="https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/roles/metricbeat-playbook.yml">https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/ansible/roles/metricbeat-playbook.yml</a></span></span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:.75in'><span
+style='font-family:"Times New Roman",serif;color:#0070C0'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman",serif'>Description of the Topology</span></b></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>The main
+purpose of this network is to expose a load-balanced and monitored instance of
+DVWA, the D*mn Vulnerable Web Application.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>Load
+balancing ensures that the application will be highly <b><span
+style='color:#0070C0'>available</span></b>, in addition to restricting <b><span
+style='color:#0070C0'>access/traffic</span> </b>to the network.</span></p>
+
+<p class=MsoListParagraph style='text-indent:-.25in'><span style='font-family:
+Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='font-family:"Times New Roman",serif'>TODO: What aspect of security do
+load balancers protect? What is the advantage of a jump box?</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-family:"Times New Roman",serif;
+color:#0070C0'>Load balancer protects from the potential distributed
+denial-of-service (DDoS) attacks.  Jump box prevents all Azure VM's to be exposed
+by only allowing VM infrastructure access via dedicated static IP address
+assigned to the jump box, using secured SSH connection from authorized IPs and
+Public key encryption.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>Integrating
+an ELK server allows users to easily monitor the vulnerable VMs for changes to
+the <b><span style='color:#0070C0'>data </span></b>and system <b><span
+style='color:#0070C0'>logs</span></b>.</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif'>TODO: What does
+Filebeat watch for?_ <span style='color:#0070C0'>Filebeat monitors the log
+files or locations that you specify, collects log events, and forwards them
+either to Elasticsearch or Logstash for indexing</span>. Ref: </span><a
+href="https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html"><span
+style='font-family:"Times New Roman",serif'>https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html</span></a></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif'>TODO: What does
+Metricbeat record? <span style='color:#0070C0'>Metricbeat collects and ships
+various system and service metrics to a specified output destination. </span>Ref:
+</span><a href="https://logz.io/blog/metricbeat-tutorial/"><span
+style='font-family:"Times New Roman",serif'>https://logz.io/blog/metricbeat-tutorial/</span></a></p>
+
+<p class=MsoListParagraphCxSpMiddle><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpLast><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman",serif'>The configuration details of each machine
+may be found in the tables below:</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman",serif'>&nbsp;</span></b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=627
+ style='width:470.0pt;margin-left:30.2pt;border-collapse:collapse'>
+ <tr style='height:15.0pt'>
+  <td width=167 nowrap valign=bottom style='width:125.0pt;border:solid windowtext 1.0pt;
+  background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>NAME</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>LOCATION</span></p>
+  </td>
+  <td width=92 nowrap valign=bottom style='width:69.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>OS</span></p>
+  </td>
+  <td width=77 nowrap valign=bottom style='width:58.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>PRIVATE IP</span></p>
+  </td>
+  <td width=99 nowrap valign=bottom style='width:74.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>PUBLIC IP</span></p>
+  </td>
+  <td width=113 nowrap valign=bottom style='width:85.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>VIRTUAL
+  NETWORK</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=167 nowrap valign=bottom style='width:125.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>vm-elk-server</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>East US 2</span></p>
+  </td>
+  <td width=92 nowrap valign=bottom style='width:69.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Ubuntu 20.04</span></p>
+  </td>
+  <td width=77 nowrap valign=bottom style='width:58.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>10.4.0.4</span></p>
+  </td>
+  <td width=99 nowrap valign=bottom style='width:74.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>104.209.142.63</span></p>
+  </td>
+  <td width=113 nowrap valign=bottom style='width:85.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>vnet-elk2</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=167 nowrap valign=bottom style='width:125.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>vm-jump-box-provisioner</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Central US</span></p>
+  </td>
+  <td width=92 nowrap valign=bottom style='width:69.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Ubuntu 18.04</span></p>
+  </td>
+  <td width=77 nowrap valign=bottom style='width:58.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>10.2.0.4</span></p>
+  </td>
+  <td width=99 nowrap valign=bottom style='width:74.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>13.89.230.22</span></p>
+  </td>
+  <td width=113 nowrap valign=bottom style='width:85.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>vnet-redteam</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=167 nowrap valign=bottom style='width:125.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Web-1</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Central US</span></p>
+  </td>
+  <td width=92 nowrap valign=bottom style='width:69.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Ubuntu 18.04</span></p>
+  </td>
+  <td width=77 nowrap valign=bottom style='width:58.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>10.2.0.5</span></p>
+  </td>
+  <td width=99 nowrap valign=bottom style='width:74.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>40.69.134.54</span></p>
+  </td>
+  <td width=113 nowrap valign=bottom style='width:85.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>vnet-redteam</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=167 nowrap valign=bottom style='width:125.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Web-2</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Central US</span></p>
+  </td>
+  <td width=92 nowrap valign=bottom style='width:69.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Ubuntu 18.04</span></p>
+  </td>
+  <td width=77 nowrap valign=bottom style='width:58.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>10.2.0.6</span></p>
+  </td>
+  <td width=99 nowrap valign=bottom style='width:74.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>40.69.134.54</span></p>
+  </td>
+  <td width=113 nowrap valign=bottom style='width:85.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>vnet-redteam</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=167 nowrap valign=bottom style='width:125.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Web-3</span></p>
+  </td>
+  <td width=79 nowrap valign=bottom style='width:59.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Central US</span></p>
+  </td>
+  <td width=92 nowrap valign=bottom style='width:69.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Ubuntu 18.04</span></p>
+  </td>
+  <td width=77 nowrap valign=bottom style='width:58.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>10.2.0.7</span></p>
+  </td>
+  <td width=99 nowrap valign=bottom style='width:74.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>40.69.134.54</span></p>
+  </td>
+  <td width=113 nowrap valign=bottom style='width:85.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>vnet-redteam</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;line-height:normal'><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b>VM Size and OS:</b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=696
+ style='width:7.25in;margin-left:30.2pt;border-collapse:collapse'>
+ <tr style='height:15.0pt'>
+  <td width=140 nowrap valign=bottom style='width:105.0pt;border:solid windowtext 1.0pt;
+  background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>NAME</span></p>
+  </td>
+  <td width=89 nowrap valign=bottom style='width:67.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>OS</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:75.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>SIZE</span></p>
+  </td>
+  <td width=53 nowrap valign=bottom style='width:40.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>vCPU</span></p>
+  </td>
+  <td width=61 nowrap valign=bottom style='width:46.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>RAM (GiB)</span></p>
+  </td>
+  <td width=77 nowrap valign=bottom style='width:58.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>LOCATION</span></p>
+  </td>
+  <td width=76 nowrap valign=bottom style='width:57.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>PRIVATE IP</span></p>
+  </td>
+  <td width=99 nowrap valign=bottom style='width:74.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>PUBLIC IP</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=140 nowrap valign=bottom style='width:105.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>vm-elk-server</span></p>
+  </td>
+  <td width=89 nowrap valign=bottom style='width:67.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Ubuntu 20.04</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:75.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Standard_B2s</span></p>
+  </td>
+  <td width=53 nowrap valign=bottom style='width:40.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;text-align:right;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>2</span></p>
+  </td>
+  <td width=61 nowrap valign=bottom style='width:46.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;text-align:right;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>4</span></p>
+  </td>
+  <td width=77 nowrap valign=bottom style='width:58.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>East US 2</span></p>
+  </td>
+  <td width=76 nowrap valign=bottom style='width:57.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>10.4.0.4</span></p>
+  </td>
+  <td width=99 nowrap valign=bottom style='width:74.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>104.209.142.63</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=140 nowrap valign=bottom style='width:105.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>vm-jump-box-provisioner</span></p>
+  </td>
+  <td width=89 nowrap valign=bottom style='width:67.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Ubuntu 18.04</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:75.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Standard_B1s</span></p>
+  </td>
+  <td width=53 nowrap valign=bottom style='width:40.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;text-align:right;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>1</span></p>
+  </td>
+  <td width=61 nowrap valign=bottom style='width:46.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;text-align:right;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>1</span></p>
+  </td>
+  <td width=77 nowrap valign=bottom style='width:58.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Central US</span></p>
+  </td>
+  <td width=76 nowrap valign=bottom style='width:57.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>10.2.0.4</span></p>
+  </td>
+  <td width=99 nowrap valign=bottom style='width:74.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>13.89.230.22</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=140 nowrap valign=bottom style='width:105.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Web-1</span></p>
+  </td>
+  <td width=89 nowrap valign=bottom style='width:67.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Ubuntu 18.04</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:75.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Standard_B1ms</span></p>
+  </td>
+  <td width=53 nowrap valign=bottom style='width:40.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;text-align:right;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>1</span></p>
+  </td>
+  <td width=61 nowrap valign=bottom style='width:46.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;text-align:right;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>2</span></p>
+  </td>
+  <td width=77 nowrap valign=bottom style='width:58.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Central US</span></p>
+  </td>
+  <td width=76 nowrap valign=bottom style='width:57.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>10.2.0.5</span></p>
+  </td>
+  <td width=99 nowrap valign=bottom style='width:74.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>40.69.134.54</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=140 nowrap valign=bottom style='width:105.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Web-2</span></p>
+  </td>
+  <td width=89 nowrap valign=bottom style='width:67.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Ubuntu 18.04</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:75.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Standard_B1ms</span></p>
+  </td>
+  <td width=53 nowrap valign=bottom style='width:40.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;text-align:right;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>1</span></p>
+  </td>
+  <td width=61 nowrap valign=bottom style='width:46.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;text-align:right;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>2</span></p>
+  </td>
+  <td width=77 nowrap valign=bottom style='width:58.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Central US</span></p>
+  </td>
+  <td width=76 nowrap valign=bottom style='width:57.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>10.2.0.6</span></p>
+  </td>
+  <td width=99 nowrap valign=bottom style='width:74.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>40.69.134.54</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=140 nowrap valign=bottom style='width:105.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Web-3</span></p>
+  </td>
+  <td width=89 nowrap valign=bottom style='width:67.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Ubuntu 18.04</span></p>
+  </td>
+  <td width=100 nowrap valign=bottom style='width:75.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Standard_B1ms</span></p>
+  </td>
+  <td width=53 nowrap valign=bottom style='width:40.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;text-align:right;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>1</span></p>
+  </td>
+  <td width=61 nowrap valign=bottom style='width:46.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;text-align:right;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>2</span></p>
+  </td>
+  <td width=77 nowrap valign=bottom style='width:58.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Central US</span></p>
+  </td>
+  <td width=76 nowrap valign=bottom style='width:57.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>10.2.0.7</span></p>
+  </td>
+  <td width=99 nowrap valign=bottom style='width:74.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>40.69.134.54</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-left:.5in'>&nbsp;</p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman",serif'>Custom Access Policies</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-family:Symbol;color:#0070C0'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif;color:#0070C0'>The
+following VM Web Servers on the internal network are not directly exposed to
+the public Internet: </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;text-indent:-.25in'><span
+style='font-family:"Courier New";color:#0070C0'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif;color:#0070C0'>Web-1</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;text-indent:-.25in'><span
+style='font-family:"Courier New";color:#0070C0'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif;color:#0070C0'>Web-2</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:1.0in;text-indent:-.25in'><span
+style='font-family:"Courier New";color:#0070C0'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif;color:#0070C0'>Web-3</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman",serif;color:#0070C0'>They are assigned
+to load balancer backend pool. The Web application installed on these servers can
+be accessed via public IP address 40.69.134.54 that is assigned to the load
+balancer, on port 80.</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:Symbol;color:#0070C0'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>Only the <b>vm-jump-box-provisioner</b> virtual machine can
+accept connections from the Internet. Access to this machine is only allowed via
+SSH protocol on port 22, from the following IP address: xxx.xxx.xxx.142 (the
+actual public IP address of the admin workstation is masked for security
+purpose). </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:Symbol;color:#0070C0'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>Machines within the network can only be accessed by <b>vm-jump-box-provisioner
+</b>(</span><span style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>10.2.0.4)</span><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman",serif;color:#0070C0'>.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Wingdings;color:#0070C0'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-family:"Times New Roman",serif'>TODO: Which
+machine did you allow to access your ELK VM? What was its IP address?_</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span style='font-family:"Times New Roman",serif;
+color:#0070C0'>ELK VM console can only be accessed from Jump Box VM 10.2.0.4 on
+port 22 via SSH protocol. Externally facing ELK portal can be accessed by
+public IP address of the Admin Computer xxx.xxx.xxx.142</span></p>
+
+<p class=MsoListParagraphCxSpLast><span style='font-family:"Times New Roman",serif;
+color:#0070C0'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman",serif;color:#0070C0'>A summary
+of the access policies in place can be found in the table below:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=712
+ style='width:533.75pt;margin-left:30.2pt;border-collapse:collapse'>
+ <tr style='height:12.6pt'>
+  <td width=97 nowrap valign=bottom style='width:72.9pt;border:solid windowtext 1.0pt;
+  background:white;padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>Vnet</span></p>
+  </td>
+  <td width=132 nowrap valign=bottom style='width:99.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>Network
+  Security Group</span></p>
+  </td>
+  <td width=78 nowrap valign=bottom style='width:58.5pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>Inbound Rules</span></p>
+  </td>
+  <td width=51 nowrap valign=bottom style='width:38.1pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>Port(s)</span></p>
+  </td>
+  <td width=49 nowrap valign=bottom style='width:37.05pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>Action</span></p>
+  </td>
+  <td width=145 nowrap valign=bottom style='width:108.9pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>Source(s)</span></p>
+  </td>
+  <td width=159 nowrap valign=bottom style='width:119.3pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='font-size:10.0pt;color:black'>Destination</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.6pt'>
+  <td width=97 nowrap valign=bottom style='width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>vnet-redteam</span></p>
+  </td>
+  <td width=132 nowrap valign=bottom style='width:99.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>nsg-central-us</span></p>
+  </td>
+  <td width=78 nowrap valign=bottom style='width:58.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>Allow-SSH</span></p>
+  </td>
+  <td width=51 nowrap valign=bottom style='width:38.1pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;text-align:right;
+  line-height:normal'><span style='color:black'>22</span></p>
+  </td>
+  <td width=49 nowrap valign=bottom style='width:37.05pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>Allow</span></p>
+  </td>
+  <td width=145 nowrap valign=bottom style='width:108.9pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>Admin WS Public IP, 10.2.0.4</span></p>
+  </td>
+  <td width=159 nowrap valign=bottom style='width:119.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>Virtual Network (10.2.0.0./24)</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.6pt'>
+  <td width=97 nowrap valign=bottom style='width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>vnet-redteam</span></p>
+  </td>
+  <td width=132 nowrap valign=bottom style='width:99.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>nsg-central-us</span></p>
+  </td>
+  <td width=78 nowrap valign=bottom style='width:58.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Port-80</span></p>
+  </td>
+  <td width=51 nowrap valign=bottom style='width:38.1pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;text-align:right;
+  line-height:normal'><span style='color:black'>80</span></p>
+  </td>
+  <td width=49 nowrap valign=bottom style='width:37.05pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>Allow</span></p>
+  </td>
+  <td width=145 nowrap valign=bottom style='width:108.9pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>Admin WS Public IP, 10.2.0.4</span></p>
+  </td>
+  <td width=159 nowrap valign=bottom style='width:119.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>Virtual Network (10.2.0.0./24)</span></p>
+  </td>
+ </tr>
+ <tr style='height:12.6pt'>
+  <td width=97 nowrap valign=bottom style='width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>vnet-elk2</span></p>
+  </td>
+  <td width=132 nowrap valign=bottom style='width:99.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>elk-nsg</span></p>
+  </td>
+  <td width=78 nowrap valign=bottom style='width:58.5pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Allow-SSH</span></p>
+  </td>
+  <td width=51 nowrap valign=bottom style='width:38.1pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;text-align:right;
+  line-height:normal'><span style='color:black'>22</span></p>
+  </td>
+  <td width=49 nowrap valign=bottom style='width:37.05pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>Allow</span></p>
+  </td>
+  <td width=145 nowrap valign=bottom style='width:108.9pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>10.2.0.4</span></p>
+  </td>
+  <td width=159 nowrap valign=bottom style='width:119.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.6pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>10.4.0.4</span></p>
+  </td>
+ </tr>
+ <tr style='height:.7in'>
+  <td width=97 nowrap style='width:72.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:.7in'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>vnet-elk2</span></p>
+  </td>
+  <td width=132 nowrap style='width:99.0pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:.7in'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>elk-nsg</span></p>
+  </td>
+  <td width=78 nowrap style='width:58.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:.7in'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='font-size:10.0pt;color:black'>Port_5601</span></p>
+  </td>
+  <td width=51 style='width:38.1pt;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;
+  height:.7in'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>5601, 5044, 9200, 9300</span></p>
+  </td>
+  <td width=49 nowrap style='width:37.05pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:.7in'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>Allow</span></p>
+  </td>
+  <td width=145 nowrap style='width:108.9pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:.7in'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>Admin WS Public IP</span></p>
+  </td>
+  <td width=159 nowrap valign=bottom style='width:119.3pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:.7in'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>Virtual Network (10.2.0.0./24)</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman",serif;color:#0070C0'>Network
+traffic that does not meet above polices will be denied</span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif'>.
+</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman",serif'>Elk Configuration</span></b></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Times New Roman",serif'>Ansible was used to automate configuration of the ELK
+machine. No configuration was performed manually, which is advantageous
+because...</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:Wingdings'>Ø<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif'>TODO:
+What is the main advantage of automating configuration with Ansible?_</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span style='font-size:12.0pt;line-height:
+107%;font-family:"Times New Roman",serif;color:#0070C0'>Ansible is an
+open-source automation engine that uses code, where you can describe configuration,
+deployment, provisioning that can used for process automation. It uses YAML
+language playbook to describe automation task</span><span style='font-size:
+12.0pt;line-height:107%;font-family:"Times New Roman",serif'>.</span></p>
+
+<p class=MsoListParagraphCxSpLast><span style='font-size:12.0pt;line-height:
+107%;font-family:"Times New Roman",serif'>  </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Times New Roman",serif'>The playbook implements the following tasks:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:Wingdings'>Ø<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif'>TODO:
+In 3-5 bullets, explain the steps of the ELK installation play. E.g., install
+Docker; download image; etc._</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.75in;text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:Symbol;color:#0070C0'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>Add your new ELK ip address to the Ansible <code><span
+style='line-height:107%;font-family:"Times New Roman",serif'>hosts</span></code>
+file.  </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.75in;text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:Symbol;color:#0070C0'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>Create a new Ansible playbook to use for your new ELK virtual
+machine. The elk.yml playbook file includes the following tasks:</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:1.25in;text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:Wingdings;color:#0070C0'>§<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>to use more memory:</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:109.6pt;line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:#0070C0'>    name: vm.max_map_count</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:109.6pt;line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:#0070C0'>    value: '262144'</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:109.6pt;line-height:normal'><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:#0070C0'> </span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:1.25in;text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:Wingdings;color:#0070C0'>§<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>Install the following services: docker.io,  python3-pip, docker</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.25in;text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:Wingdings;color:#0070C0'>§<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>Configure the following published ports: 5601, 9200, 5044</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:.75in;text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:Symbol;color:#0070C0'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>Run the ansible playbook to launch the container using the
+following command: ansible-playbook elk.yml</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:.75in;text-indent:-.25in'><a
+name="_Hlk74211673"><span style='font-size:12.0pt;line-height:107%;font-family:
+Symbol;color:#0070C0'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>Navigate to </span></a><a
+href="http://104.209.142.63:5601/app/kibana"><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman",serif;color:#0070C0'>http://104.209.142.63:5601/app/kibana</span></a><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'> URL to verify that Elk stack server portal can be loaded</span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman",serif;color:#0070C0'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman",serif;color:#0070C0'>The
+following screenshot displays the result of running `docker ps` after
+successfully configuring the ELK instance:</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:12.0pt;
+line-height:107%;font-family:"Times New Roman",serif;color:#0070C0'><a
+href="https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/images/elk-docker-ps.png">https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/images/elk-docker-ps.png</a></span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><a
+href="https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/images/elk-docker-ps.png"><span
+style='color:windowtext;text-decoration:none'><img border=0 width=864
+height=44 id="Picture 5" src="Project1-html_files/image004.jpg"></span></a></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman",serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman",serif'>Target Machines &amp; Beats</span></b></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Times New Roman",serif'>This ELK server is configured to monitor the following
+machines:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:Wingdings'>Ø<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif'>TODO:
+List the IP addresses of the machines you are monitoring:</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span style='font-size:12.0pt;line-height:
+107%;font-family:"Times New Roman",serif;color:#0070C0'>10.2.0.5</span></p>
+
+<p class=MsoListParagraphCxSpMiddle><span style='font-size:12.0pt;line-height:
+107%;font-family:"Times New Roman",serif;color:#0070C0'>10.2.0.6</span></p>
+
+<p class=MsoListParagraphCxSpLast><span style='font-size:12.0pt;line-height:
+107%;font-family:"Times New Roman",serif;color:#0070C0'>10.2.0.7</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Times New Roman",serif'>We have installed the following Beats on these
+machines:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:Wingdings'>Ø<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif'>TODO:
+Specify which Beats you successfully installed:</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Courier New";color:#0070C0'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>Filebeat module</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:1.0in;text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Courier New";color:#0070C0'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>Metricbeat module</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Times New Roman",serif'>These Beats allow us to collect the following information
+from each machine:</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:Wingdings'>Ø<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif'>TODO:
+In 1-2 sentences, explain what kind of data each beat collects, and provide 1
+example of what you expect to see. E.g., `Winlogbeat` collects Windows logs,
+which we use to track user logon events, etc.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Courier New";color:#0070C0'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>Filebeat module monitors, collects and parse various predefined
+log files and forwards them to Logstash or Elasticsearch.   </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:1.0in;text-indent:-.25in'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Courier New";color:#0070C0'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>Metricbeat module collect metrics from OS and services and
+forwards them to Logstash or Elasticsearch.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:1.0in'><span
+style='font-size:12.0pt;line-height:107%;font-family:"Times New Roman",serif;
+color:#0070C0'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+font-family:"Times New Roman",serif'>Using the Playbook</span></b></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Times New Roman",serif'>In order to use the playbook, you will need to have an
+Ansible control node already configured. Assuming you have such a control node
+provisioned: </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Times New Roman",serif'>SSH into the control node and follow the steps below:</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Times New Roman",serif'>- Copy the _____ file to _____.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Times New Roman",serif'>- Update the _____ file to include...</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Times New Roman",serif'>- Run the playbook, and navigate to ____ to check that
+the installation worked as expected.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;font-family:
+"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='text-indent:-.25in'><span style='font-size:
+12.0pt;line-height:107%;font-family:Wingdings'>Ø<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:107%'>TODO: Answer the
+following questions to fill in the blanks:_</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+line-height:107%'>- _Which file is the playbook? Where do you copy it?_</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+line-height:107%;color:#0070C0'>The <a name="_Hlk74212331"><b>filebeat-playbook.yml</b>
+and <b>metricbeat-playbook.yml</b> </a>are the playbook files. The files should
+be copied into <b>/etc/ansible/roles</b> folder of the container running on the
+Jump Box. </span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:12.0pt;
+line-height:107%;color:#0070C0'>The</span><span style='font-size:12.0pt;
+line-height:107%'> <b><span style='color:#0070C0'>filebeat-config.yml</span></b><span
+style='color:#0070C0'> and <b>metricbeat-config.yml </b>configuration files<b> </b>should
+be placed into <b>/etc/ansible/files </b>folder </span></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>- _Which
+file do you update to make Ansible run the playbook on a specific machine? How
+do I specify which machine to install the ELK server on versus which to install
+Filebeat on?_ </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:#0070C0'>First,
+we modify <b>hosts</b> file of the ansible container on the Jump Box
+provisioner to include special sections [webservers] and [elk] with IP
+addresses of the target machine.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:#0070C0'>Then
+in the filebeat-playbook.yml, or metricbeat-playbook.yml we identify target
+machines in the <b>hosts</b> statement. For example:</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in'><span style='font-size:12.0pt;line-height:107%;color:#0070C0'>-
+name: Config elk VM with Docker</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in'><span style='font-size:12.0pt;line-height:107%;color:#0070C0'> 
+hosts: <b>elk</b></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>- _Which URL
+do you navigate to in order to check that the ELK server is running?</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:#0070C0'>Navigate
+to </span><a href="http://104.209.142.63:5601/app/kibana"><span
+style='font-size:12.0pt;line-height:107%'>http://104.209.142.63:5601/app/kibana</span></a><span
+style='font-size:12.0pt;line-height:107%;color:#0070C0'> URL to verify that Elk
+stack server portal can be loaded</span></p>
+
+<p class=MsoNormal><a
+href="https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/images/Kibana-dashboard.png"><span
+style='color:#0070C0;text-decoration:none'><img border=0 width=864 height=354
+id="Picture 7" src="Project1-html_files/image005.jpg"
+alt="Graphical user interface&#10;&#10;Description automatically generated with medium confidence"></span></a></p>
+
+<p class=MsoNormal><a
+href="https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/images/Kibana-dashboard.png">https://github.com/vz-cyber/Cyber-Security-Project-1/blob/main/images/Kibana-dashboard.png</a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>As a **Bonus**, provide the specific commands the user will
+need to run to download the playbook, update the files, etc._</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=851
+ style='width:638.0pt;margin-left:-.15pt;border-collapse:collapse'>
+ <tr style='height:15.0pt'>
+  <td width=307 nowrap valign=bottom style='width:230.0pt;border:solid windowtext 1.0pt;
+  background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='color:black'>Command</span></p>
+  </td>
+  <td width=544 nowrap valign=bottom style='width:408.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+  line-height:normal'><span style='color:black'>Description</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=307 nowrap valign=bottom style='width:230.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>ansible webservers -m ping</span></p>
+  </td>
+  <td width=544 nowrap valign=bottom style='width:408.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>to verify that group of servers are accessible</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=307 nowrap valign=bottom style='width:230.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>sudo docker container ls -a</span></p>
+  </td>
+  <td width=544 nowrap valign=bottom style='width:408.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>to list docker containers</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=307 nowrap valign=bottom style='width:230.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>sudo docker container start &lt;container name&gt;</span></p>
+  </td>
+  <td width=544 nowrap valign=bottom style='width:408.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>to start the container</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=307 nowrap valign=bottom style='width:230.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>sudo docker ps</span></p>
+  </td>
+  <td width=544 nowrap valign=bottom style='width:408.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>to validate if container is running. The uptime will be
+  indicated under STATUS column</span></p>
+  </td>
+ </tr>
+ <tr style='height:15.0pt'>
+  <td width=307 nowrap valign=bottom style='width:230.0pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>sudo docker container attach &lt;container name&gt;</span></p>
+  </td>
+  <td width=544 nowrap valign=bottom style='width:408.0pt;border-top:none;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:15.0pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  style='color:black'>to log in to the container </span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
